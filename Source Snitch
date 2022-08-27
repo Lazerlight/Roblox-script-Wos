@@ -1,0 +1,15 @@
+local id = game:GetService("Players").LocalPlayer.UserId
+local broom = game:GetService("Workspace").FlyingBrooms[id].BroomSeat
+local snitch = game:GetService("Workspace").Snitch.Snitch
+local USI = game:GetService("UserInputService")
+USI.InputBegan:Connect(function(input, typing)
+	if not (typing) then
+		if (input.KeyCode == Enum.KeyCode.P) then
+			while (game:GetService("Workspace").FlyingBrooms[id]:FindFirstChild("BroomSeat")) do 
+	            broom.CFrame = snitch.CFrame
+	            wait(0.1)
+	            print("Tried")
+			end
+		end
+	end
+end)
