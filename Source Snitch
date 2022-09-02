@@ -1,15 +1,17 @@
+-- execute
+local A_1 = Ray.new(Vector3.new(-424.849853515625, 46.588382720947266, -280.1957092285156), Vector3.new(0.8594683408737183, 0.18586139380931854, -0.4762033522129059))
+local A_2 = Vector3.new(-417.71319580078125, 48.13169860839844, -284.14990234375)
+local Event = game:GetService("ReplicatedStorage").WandSystems.SpellEvents.VocareEvent
+Event:FireServer(A_1, A_2)
+wait(2)
 local id = game:GetService("Players").LocalPlayer.UserId
 local broom = game:GetService("Workspace").FlyingBrooms[id].BroomSeat
-local snitch = game:GetService("Workspace").Snitch.Snitch
-local USI = game:GetService("UserInputService")
-USI.InputBegan:Connect(function(input, typing)
-	if not (typing) then
-		if (input.KeyCode == Enum.KeyCode.P) then
-			while (game:GetService("Workspace").FlyingBrooms[id]:FindFirstChild("BroomSeat")) do 
-	            broom.CFrame = snitch.CFrame
-	            wait(0.1)
-	            print("Tried")
-			end
-		end
-	end
-end)
+local snitch = game:GetService("Workspace").Snitch.FBXImportGeneric.Wing
+    while (game:GetService("Workspace").FlyingBrooms[id]:FindFirstChild("BroomSeat")) do 
+
+        broom.CFrame = snitch.CFrame
+        int = int +1
+        wait(0.1)
+    end
+  
+-- execute
